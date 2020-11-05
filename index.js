@@ -45,8 +45,8 @@ Use the copy function below to do the following:
     2. Return a copy of the received array  
 */
 
-function copy(/*your code here*/){
-    /*your code here*/
+function copy(originalFlavors){
+    return [...originalFlavors];
 }    
 
 
@@ -64,8 +64,8 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
-   /*your code here*/
+function is31Flavors(originalFlavors){
+   return 31 == originalFlavors.length;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -81,9 +81,11 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-   /*your code here*/
+function addFlavor(originalFlavors, newFlavor){
+   originalFlavors.unshift(newFlavor);
+   return originalFlavors;
 }
+
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -97,8 +99,9 @@ Use the removeLastFlavor function below to do the following:
     For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
-   /*your code here*/
+function removeLastFlavor(originalFlavors){
+   originalFlavors.pop();
+   return originalFlavors;
 }
 
 
@@ -113,8 +116,8 @@ Use the getFlavorByIndex function below to do the following:
     For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-    /*your code here*/
+function getFlavorByIndex(originalFlavors, index){
+    return originalFlavors[index];
 }
 
 
@@ -124,7 +127,7 @@ as opposed to just arbitrarily removing the first or last flavor. Your task is t
 
 Use the removeFlavorByName function below to do the following:
     1. Receive an array and a string (the flavour to be removed)
-    2. Remove that flavor from the array
+    2. Remove that flavor from the array indexOf
     5. Return the resulting array that now contains one less flavor
 
     For example: running removeFlavorByName(originalFlavors, "Rocky Road") would return an array with the a length of 30 because Rocky Road would have been removed. 
@@ -132,11 +135,14 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-    /*your code here*/
+function removeFlavorByName(originalFlavors, name){
+    
+    let index = originalFlavors.indexOf(name);
+    originalFlavors.splice(index, 1);
+
+    return originalFlavors;
+
 }
-
-
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. 
@@ -156,9 +162,32 @@ Use the filterByWord function below to do the following:
 
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
+// let filteredArray = [];
 
-function filterByWord(/*your code here*/){
-    /*your code here*/
+function filterByWord(originalFlavors, flavors){
+    // for (i in originalFlavors){
+    //     if (originalFlavors.includes(flavors)){
+    //         let filteredArray = originalFlavors.slice(i);
+    //     }
+    // }
+
+    // for (i in originalFlavors){
+    //     let filteredArray = originalFlavors.slice(originalFlavors.indexOf(flavors));
+    // }
+
+    // if (originalFlavors.includes(flavors)){
+    //     let filteredArray = originalFlavors.slice(originalFlavors.indexOf(flavors));
+    // }
+    
+    for (i = 0; i < originalFlavors.length; i++){
+        if (originalFlavors.includes(flavors)){
+            let filteredArray = originalFlavors.slice(i);
+        }
+    }
+    
+
+
+    return filteredArray;
 }
 
 
