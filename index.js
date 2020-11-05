@@ -162,14 +162,32 @@ Use the filterByWord function below to do the following:
 
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
-let filteredArray = [];
+// let filteredArray = [];
 
-function filterByWord(/*originalFlavors, flavors*/){
+function filterByWord(originalFlavors, flavors){
     // for (i in originalFlavors){
-    //     if originalFlavors.includes(flavors){
-
+    //     if (originalFlavors.includes(flavors)){
+    //         let filteredArray = originalFlavors.slice(i);
     //     }
     // }
+
+    // for (i in originalFlavors){
+    //     let filteredArray = originalFlavors.slice(originalFlavors.indexOf(flavors));
+    // }
+
+    // if (originalFlavors.includes(flavors)){
+    //     let filteredArray = originalFlavors.slice(originalFlavors.indexOf(flavors));
+    // }
+    
+    for (i = 0; i < originalFlavors.length; i++){
+        if (originalFlavors.includes(flavors)){
+            let filteredArray = originalFlavors.slice(i);
+        }
+    }
+    
+
+
+    return filteredArray;
 }
 
 
