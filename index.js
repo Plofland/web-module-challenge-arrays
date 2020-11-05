@@ -80,8 +80,8 @@ Use the addFlavor function below to do the following:
     For example: addFlavor("Rainbow Sherbert", originalFlavors) should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
 
-let newFlavor = "";
-function addFlavor(newFlavor){
+
+function addFlavor(originalFlavors, newFlavor){
    originalFlavors.unshift(newFlavor);
    return originalFlavors;
 }
@@ -116,8 +116,8 @@ Use the getFlavorByIndex function below to do the following:
     For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(){
-    
+function getFlavorByIndex(originalFlavors, index){
+    return originalFlavors[index];
 }
 
 
@@ -127,7 +127,7 @@ as opposed to just arbitrarily removing the first or last flavor. Your task is t
 
 Use the removeFlavorByName function below to do the following:
     1. Receive an array and a string (the flavour to be removed)
-    2. Remove that flavor from the array
+    2. Remove that flavor from the array indexOf
     5. Return the resulting array that now contains one less flavor
 
     For example: running removeFlavorByName(originalFlavors, "Rocky Road") would return an array with the a length of 30 because Rocky Road would have been removed. 
@@ -135,11 +135,14 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-    /*your code here*/
+function removeFlavorByName(originalFlavors, name){
+    
+    let index = originalFlavors.indexOf(name);
+    originalFlavors.splice(index, 1);
+
+    return originalFlavors;
+
 }
-
-
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. 
@@ -159,9 +162,14 @@ Use the filterByWord function below to do the following:
 
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
+let filteredArray = [];
 
-function filterByWord(/*your code here*/){
-    /*your code here*/
+function filterByWord(/*originalFlavors, flavors*/){
+    // for (i in originalFlavors){
+    //     if originalFlavors.includes(flavors){
+
+    //     }
+    // }
 }
 
 
